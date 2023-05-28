@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1320.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guifinal.Controller.UserPanelController">
+   <children>
+      <VBox alignment="TOP_CENTER" prefHeight="800.0" prefWidth="306.0" style="-fx-background-color: #FFF;">
+          <padding>
+              <Insets top="10.0" />
+          </padding>
+         <HBox alignment="CENTER" spacing="10.0">
+            <children>
+               <Label text="Genie" textFill="#5978a1">
+                  <font>
+                     <Font name="Cambria Bold Italic" size="64.0" />
+                  </font>
+               </Label>
+               <Label text="Shop" textFill="#6ba4d7">
+                  <font>
+                     <Font name="Cambria Italic" size="64.0" />
+                  </font>
+               </Label>
+            </children>
+         </HBox>
+         <Separator prefWidth="200.0">
+            <VBox.margin>
+               <Insets bottom="10.0" top="10.0" />
+            </VBox.margin>
+         </Separator>
+          <Button fx:id="homeButton" alignment="BASELINE_LEFT" onAction="#onHomeButtonClick" prefHeight="74.0" prefWidth="347.0" style="-fx-background-color: #F4F4FC;" text="Home Page" textFill="#083266">
+            <font>
+               <Font name="Cambria Bold" size="24.0" />
+            </font></Button>
+         <Separator prefWidth="200.0" />
+         <Button fx:id="profileButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onProfileButtonClick" prefHeight="90.0" prefWidth="347.0" style="-fx-background-color: transparent;" text="My Profile" textFill="#083266">
+            <font>
+               <Font name="Cambria Bold" size="24.0" />
+            </font>
+         </Button>
+         <Separator prefWidth="200.0" />
+         <Button fx:id="itemButton" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#onItemButtonClick" prefHeight="82.0" prefWidth="347.0" style="-fx-background-color: transparent;" text="Shop" textFill="#083266">
+            <font>
+               <Font name="Cambria Bold" size="24.0" />
+            </font>
+         </Button>
+         <Separator prefWidth="200.0" />
+         <AnchorPane prefHeight="401.0" prefWidth="362.0">
+            <children>
+               <Button fx:id="logOut" alignment="BASELINE_LEFT" layoutY="349.0" mnemonicParsing="false" onAction="#onLogOutButtonClick" prefHeight="79.0" prefWidth="347.0" style="-fx-background-color: #a1865a;" text="Log out" textFill="#c41c1c">
+                  <font>
+                     <Font name="Cambria Bold" size="24.0" />
+                  </font>
+               </Button>
+            </children>
+         </AnchorPane>
+      </VBox>
+      <StackPane fx:id="contentArea" layoutX="346.0" prefHeight="800.0" prefWidth="974.0" style="-fx-background-color: #F4F4FC;" />
+   </children>
+</AnchorPane>

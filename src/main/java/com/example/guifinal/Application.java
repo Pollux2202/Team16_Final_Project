@@ -1,0 +1,59 @@
+package com.example.guifinal;
+
+import com.example.guifinal.Customer.CustomerList;
+
+import com.example.guifinal.FileReader.Functions;
+import com.example.guifinal.Item.ItemList;
+
+import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
+import javafx.stage.WindowEvent;
+
+import java.io.IOException;
+
+public class Application extends javafx.application.Application {
+    public static ItemList itemList = new ItemList();
+    public static CustomerList customerList = new CustomerList();
+
+    @Override
+    public void start(Stage stage) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Login.fxml"));
+        stage.initStyle(StageStyle.DECORATED);
+
+       //Initialize file reader functions
+        itemList = Functions.readItemFromList();
+        customerList = Functions.readCustomerListFile();
+
+        //Design main Stage
+        Scene scene = new Scene(root, 1200, 800);
+        stage.setTitle("The Genie Store");
+        stage.setResizable(false);
+        stage.setScene(scene);
+        stage.show();
+        stage.getScene().getWindow().addEventFilter(WindowEvent.WINDOW_CLOSE_REQUEST, this::closeWindowEvent);
+    }
+
+    @FXML
+    private void closeWindowEvent(WindowEvent event) {
+        Functions.saveAllFiles(itemList, customerList);
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Exit Application");
+
+        alert.setHeaderText(null);
+        alert.setContentText("Goodbye and farewell!!");
+
+        alert.show();
+    }
+
+
+    public static void main(String[] args) {
+        launch();
+
+    }
+}
+

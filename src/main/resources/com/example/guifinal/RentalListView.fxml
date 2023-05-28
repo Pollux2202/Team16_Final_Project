@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="346.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.guifinal.Controller.RentalListViewController">
+    <children>
+          <TableView fx:id="rentalList" layoutY="34.0" prefHeight="311.0" prefWidth="602.0" style="-fx-background-radius: 0;">
+              <columns>
+                  <TableColumn fx:id="idColumn" prefWidth="93.0" text="ID" />
+                  <TableColumn fx:id="titleColumn" prefWidth="190.39999389648438" text="Title" />
+                  <TableColumn fx:id="rentalTypeColumn" minWidth="0.0" prefWidth="82.4000244140625" text="Rental Type" />
+                  <TableColumn fx:id="loanTypeColumn" minWidth="2.0" prefWidth="84.79998779296875" text="Loan Type" />
+                  <TableColumn fx:id="feeColumn" prefWidth="64.0" text="Fees" />
+                  <TableColumn fx:id="genreColumn" minWidth="0.0" prefWidth="88.0" text="Genres" />
+              </columns>
+          </TableView>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="WHITE" height="166.0" layoutX="617.0" layoutY="34.0" stroke="BLACK" strokeType="INSIDE" width="154.0" />
+            <Label layoutY="-1.0" prefHeight="30.0" prefWidth="185.0" text="Rental List">
+                <font>
+                    <Font name="Cambria Bold Italic" size="24.0" />
+                </font>
+            </Label>
+              <Label fx:id="accountType" layoutX="615.0" layoutY="226.0" text="Guest Account">
+                  <font>
+                      <Font name="Cambria Bold" size="24.0" />
+                  </font>
+              </Label>
+    </children>
+</AnchorPane>
